@@ -1,4 +1,3 @@
-
 .row {
     margin-top: 30px;
 }
@@ -128,3 +127,14 @@ input {
     border-radius: 10px;
     text-transform: uppercase;
 }
+
+.input-wrap {
+    padding: 5px;
+    display: flex;
+    textarea {
+      flex: 1;
+      border: 0;
+      border-bottom: 1px ;
+      border-style: solid;
+    }
+  }

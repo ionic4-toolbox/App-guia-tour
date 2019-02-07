@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   
+constructor(private menu: MenuController) { }
+
+openCustom() {
+  this.menu.enable(true, 'custom');
+  this.menu.open('custom');
+}
 }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  private baseURL: string = "https://api.dialogflow.com/v1/query?v=20150910";
-  private token: string = 'dfa1ea7056d34f3e8f6c22f602ddc09a'
+  private baseURL: string = environment.urlbase;
+  private token: string = environment.token;
 
   constructor(private http: HttpClient) { }
 
