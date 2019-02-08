@@ -18,11 +18,13 @@ import { FormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
-  declarations: [AppComponent, ChatComponent],
+  declarations: [
+    AppComponent,
+    ChatComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(), 
+    IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -37,4 +39,4 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

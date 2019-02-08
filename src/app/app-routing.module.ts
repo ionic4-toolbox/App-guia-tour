@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'chat', component:ChatComponent},
+  { path: 'novo-lugar', loadChildren: './page/novo-lugar/novo-lugar.module#NovoLugarPageModule' },
 ];
 
 @NgModule({

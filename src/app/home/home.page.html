@@ -1,3 +1,8 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-menu side="start" menuId="custom" class="my-custom-menu">
     <ion-header>
@@ -12,3 +17,18 @@
     </ion-content>
 </ion-menu>
 <ion-router-outlet main></ion-router-outlet>
+
+<ion-card>
+    <ion-card-header>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+</ion-card>
+
+<ion-card>
+    <ion-item *ngFor="let lugar of lugares | async " >
+        <img src="{{desc.img}}">
+        <div class="chat-list-title">{{lugares.nome}}</div>
+        <div class="chat-list-sub-title">{{lugares.descricao}}</div>
+    </ion-item>
+</ion-card>
