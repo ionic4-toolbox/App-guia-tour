@@ -1,34 +1,28 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>Inicio</ion-title>
+    <ion-toolbar color="primary">
+        <ion-title>Inicio</ion-title>
+        <ion-buttons slot="start">
+        <ion-menu-button class="md" ></ion-menu-button>
+        </ion-buttons>
     </ion-toolbar>
-  </ion-header>
-
-<ion-menu side="start" menuId="custom" class="my-custom-menu">
+</ion-header>
+<ion-menu side="start" menuId="first">
     <ion-header>
-        <ion-toolbar color="tertiary">
-            <ion-title>Menu</ion-title>
+        <ion-toolbar color="primary">
+            <ion-title>Start Menu</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-content>
         <ion-list>
-            <ion-item [routerLink]="['/chat']">Chat</ion-item>
+            <ion-item>Menu Item</ion-item>
         </ion-list>
     </ion-content>
 </ion-menu>
 <ion-router-outlet main></ion-router-outlet>
-
-<ion-card>
-    <ion-card-header>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        <ion-card-title>Card Title</ion-card-title>
-    </ion-card-header>
-</ion-card>
-
-<ion-card>
-    <ion-item *ngFor="let lugar of lugares | async " >
-        <img src="{{desc.img}}">
-        <div class="chat-list-title">{{lugares.nome}}</div>
-        <div class="chat-list-sub-title">{{lugares.descricao}}</div>
-    </ion-item>
-</ion-card>
+<ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
+    (ionScrollEnd)="logScrollEnd()">
+    <ion-list *ngFor="let lugar of lugares">
+        <ion-item [routerLink]="['/detalhe-lugar', lugar.id]">{{lugar.nome}}
+        </ion-item>
+    </ion-list>
+</ion-content>

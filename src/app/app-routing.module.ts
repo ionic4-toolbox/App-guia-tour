@@ -7,6 +7,10 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'chat', component:ChatComponent},
   { path: 'novo-lugar', loadChildren: './page/novo-lugar/novo-lugar.module#NovoLugarPageModule' },
+  { path: 'detalhe-lugar', loadChildren: './page/detalhe-lugar/detalhe-lugar.module#DetalheLugarPageModule' },
+  { path: 'detalhe-lugar/:id', loadChildren: './page/detalhe-lugar/detalhe-lugar.module#DetalheLugarPageModule' },
+
+
 ];
 
 @NgModule({
