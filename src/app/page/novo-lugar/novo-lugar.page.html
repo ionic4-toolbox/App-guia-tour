@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>novo-lugar</ion-title>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Adicionar Novo Ponto Turistico</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content padding>
-
+    <ion-list lines="full">
+        <ion-item>
+          <ion-input required type="text" placeholder="Nome" [(ngModel)]="lugares.nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input required type="text" placeholder="Descrição" [(ngModel)]="lugares.descricao"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="full" (click)="novoLugar()">Salva</ion-button>
 </ion-content>

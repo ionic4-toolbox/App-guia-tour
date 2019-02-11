@@ -1,5 +1,7 @@
+import { LoadingController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/service/firebase.service';
+import { Lugar } from 'src/app/model/lugar';
 
 @Component({
   selector: 'app-novo-lugar',
@@ -7,13 +9,29 @@ import { FirebaseService } from 'src/app/service/firebase.service';
   styleUrls: ['./novo-lugar.page.scss'],
 })
 export class NovoLugarPage implements OnInit {
-
-  constructor(private firebaseService: FirebaseService) {}
+  lugares: Lugar = {
+    nome: '',
+    descricao: ''
+  }
+  constructor(
+    private firebaseService: FirebaseService,
+    private loadingController: LoadingController,
+    ) {}
 
   ngOnInit() {
-    this.firebaseService.
-    criarLugar({ nome: 'Ver-O-Peso', descricao: 'Mercado do Ver-o-Peso' }).
-    then(() => console.log("Salvo com sucesso"))
+    
   }
 
+  async novoLugar(){
+
+    const loading = await this.loadingController.create({
+      message: 'Salvando...',
+    });
+    await loading.present();
+    this.firebaseService.
+      criarLugar(this.lugares).
+      then(() => console.log("Salvo com sucesso"))
+      loading.dismiss();
+
+  }
 }
