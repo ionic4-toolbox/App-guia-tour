@@ -19,10 +19,26 @@
     </ion-content>
 </ion-menu>
 <ion-router-outlet main></ion-router-outlet>
-<ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
-    (ionScrollEnd)="logScrollEnd()">
-    <ion-list *ngFor="let lugar of lugares">
-        <ion-item [routerLink]="['/detalhe-lugar', lugar.id]">{{lugar.nome}}
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
+  
+    <ion-card *ngFor="let lugar of lugares">
+        <ion-item [routerLink]="['/detalhe-lugar', lugar.id]">
+            <ion-img [src]="lugar.img"></ion-img>
         </ion-item>
-    </ion-list>
+            <ion-item [routerLink]="['/detalhe-lugar', lugar.id]">{{lugar.nome}}</ion-item>
+        <ion-card-content>
+            <ion-item [routerLink]="['/detalhe-lugar', lugar.id]">{{lugar.descricao}}</ion-item>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+                <ion-fab-button [routerLink]="['/chat']" routerLinkActive="router-link-active" >
+                <ion-icon name="chatboxes"></ion-icon>
+                </ion-fab-button>
+        </ion-fab>
+            
 </ion-content>
