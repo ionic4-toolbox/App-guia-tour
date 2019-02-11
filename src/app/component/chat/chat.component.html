@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Chat</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">  
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Chat</ion-title>
+      </ion-toolbar>
+    </ion-header>
       
       <ion-content padding>
     <div class="row align-items-center justify-content-center">
@@ -29,12 +29,13 @@
   </ion-content>
   
 
-  <ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
-  <div class="input-wrap">
-    <textarea #chat_input placeholder="Digite uma message" 
-    [(ngModel)]="msg" 
-    (keyup.enter)="sendMessage()">
-    </textarea>
+  <ion-footer no-border>
+
+    <div class="input-wrap">
+          <ion-textarea placeholder="Digite uma message ..."
+          [(ngModel)]="msg"
+          (keyup.enter)="sendMessage()">
+        </ion-textarea>
     <button ion-button clear icon-only item-rightn (click)="sendMessage()">
       <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
     </button>
