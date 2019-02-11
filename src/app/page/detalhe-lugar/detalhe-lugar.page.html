@@ -7,5 +7,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-
+    <ion-card>
+        <ion-item >
+            <ion-img [src]="lugares?.img"></ion-img>
+        </ion-item>
+            <ion-item>{{ lugares?.nome }}</ion-item>
+        <ion-card-content>
+            <ion-item>{{ lugares?.descricao }}</ion-item>
+            </ion-card-content>
+        </ion-card>
 </ion-content>

@@ -1,5 +1,7 @@
+import { FirebaseService } from './../../service/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { Lugar } from 'src/app/model/lugar';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detalhe-lugar',
@@ -8,10 +10,19 @@ import { Lugar } from 'src/app/model/lugar';
 })
 export class DetalheLugarPage implements OnInit {
   
-  constructor() { }
+  lugares: any;
+  constructor(
+    private firabaseService: FirebaseService, 
+    private activateRouter: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit() {  
+    this.firabaseService
+    .getLugaresId(this.activateRouter.snapshot.params['id'])
+    .subscribe(res => {
+      this.lugares = res ;
+    });
 
   }
+  
 
 }
