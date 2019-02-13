@@ -1,7 +1,6 @@
 import { FirebaseService } from './../service/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Lugar } from '../model/lugar';
 
 
@@ -11,13 +10,11 @@ import { Lugar } from '../model/lugar';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  private itemDoc: AngularFirestoreDocument<Lugar>;
   lugares: Lugar[];
 
   constructor(
     private menu: MenuController,
     private firebaseService: FirebaseService) { }
-
 
   openCustom() {
     this.menu.enable(true, 'custom');

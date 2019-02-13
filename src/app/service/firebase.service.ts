@@ -39,5 +39,6 @@ export class FirebaseService {
       nome: value.nome,
       descricao: value.descricao,
     });
+    
   }
 }

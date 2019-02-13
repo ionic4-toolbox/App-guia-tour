@@ -7,6 +7,11 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
+
+    <ion-button expand="full" (click)="tirarFoto()">Tirar Foto</ion-button>
+    <ion-button expand="full" (click)="upload()" *ngIf="captureDataUrl">Upload</ion-button>
+    <img [src]="captureDataUrl"  *ngIf="captureDataUrl"/>
+
     <ion-list lines="full">
         <ion-item>
           <ion-input required type="text" placeholder="Nome" [(ngModel)]="lugares.nome"></ion-input>
@@ -15,5 +20,5 @@
           <ion-input required type="text" placeholder="Descrição" [(ngModel)]="lugares.descricao"></ion-input>
         </ion-item>
       </ion-list>
-      <ion-button expand="full" (click)="novoLugar()">Salva</ion-button>
+      <ion-button expand="full" (click)="novoLugar()" [disabled]="!lugares.valid">Salva</ion-button>
 </ion-content>

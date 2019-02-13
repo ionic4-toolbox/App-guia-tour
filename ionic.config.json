@@ -1,5 +1,7 @@
 {
   "name": "guia-tour",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
